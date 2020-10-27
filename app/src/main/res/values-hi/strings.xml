@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "app_name"> SampleApp1 </string>
+    <string name = "name"> नाम </string>
+    <string name = "username"> अपना उपयोगकर्ता नाम दर्ज करें </string>
+    <string name = "pwd"> अपना पासवर्ड डालें </string>
+</resources>

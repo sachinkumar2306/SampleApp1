@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SampleApp1</string>
+    <string name="name">Name</string>
+    <string name="username">Enter your Username</string>
+    <string name="pwd">Enter your Password</string>
+</resources>
