@@ -22,6 +22,44 @@ public class MainActivity extends AppCompatActivity {
         nameEditText =findViewById(R.id.editTextTextPersonName6);   //init
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(TAG, "Start Activity started");
+    }
+
+    /**
+     * Dispatch onPause() to fragments.
+     */
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "Activity Paused");
+    }
+
+    /**
+     * Dispatch onResume() to fragments.  Note that for better inter-operation
+     * with older versions of the platform, at the point of this call the
+     * fragments attached to the activity are <em>not</em> resumed.
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG, "Activity Resumed");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG, " Activity Stopped");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "Activity is Destroyed");
+    }
+
     public void clickHandler(View view) {
         String name = nameEditText.getText().toString();   //using
         Log.v(TAG,"Button Clicked");
