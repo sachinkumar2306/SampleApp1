@@ -2,6 +2,7 @@ package com.example.sampleapp1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.content.Intent;
 import android.os.Bundle;
@@ -75,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button3:
                 Log.e(TAG, "Cancelling");
                 Toast.makeText(this, "please fill the details properly " + name, Toast.LENGTH_SHORT).show();
+                Intent dialIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:83389058"));
+                startActivity(dialIntent);
                 break;
         }
     }
