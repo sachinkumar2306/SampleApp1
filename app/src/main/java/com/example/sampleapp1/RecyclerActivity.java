@@ -1,10 +1,17 @@
 package com.example.sampleapp1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -34,5 +41,30 @@ public class RecyclerActivity extends AppCompatActivity {
         notesInArrayList.add(new Note("title4", "Subtitle4"));
         notesInArrayList.add(new Note("title5", "Subtitle5"));
         notesInArrayList.add(new Note("title6", "Subtitle6"));
+    }
+
+    @Override // to show the menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+            super.onCreateOptionsMenu(menu);
+        MenuInflater menuInflater = getMenuInflater();
+       menuInflater.inflate(R.menu.recycler_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected( MenuItem item) {
+        super.onOptionsItemSelected(item);
+        switch (item.getItemId()){
+            case R.id.selectall:
+
+                Toast.makeText(this, "selecting all", Toast.LENGTH_SHORT).show();
+
+                break;
+            case R.id.paste:
+                Toast.makeText(this, "pasting all", Toast.LENGTH_SHORT).show();
+
+                break;
+        }
+        return true;
     }
 }
