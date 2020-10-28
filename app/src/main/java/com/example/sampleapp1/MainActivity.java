@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -68,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         {
             case R.id.button2:
                 Log.w(TAG, "Logging in");
+                addTwoNums(10,20);
                 Toast.makeText(this, "Welcome to android " + name, Toast.LENGTH_SHORT).show();
                 Intent homeIntent = new Intent(MainActivity.this, HomeActivity.class);
                 homeIntent.putExtra("mykey",  name);
@@ -80,5 +80,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(dialIntent);
                 break;
         }
+    }
+
+    /**
+     *
+     * @param i
+     * @param i1
+     * @return
+     */
+    private int addTwoNums(int i, int i1) {
+        return i + i1;
     }
 }
