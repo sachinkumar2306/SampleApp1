@@ -14,6 +14,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.sampleapp1.adapters.NotesAdapter;
+import com.example.sampleapp1.model.Note;
+
 import java.util.ArrayList;
 
 public class RecyclerActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.sampleapp1;
+package com.example.sampleapp1.model;
 
 //Model class or a pojo
 public class Note {         //a box with 2 partitions
