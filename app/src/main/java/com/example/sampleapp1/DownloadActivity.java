@@ -2,15 +2,20 @@ package com.example.sampleapp1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class DownloadActivity extends AppCompatActivity {
     public static String TAG = MainActivity.class.getSimpleName();
     ProgressBar mprogressBar;
+    EditText mBookInput;
+    TextView mTitleText,mAuthorText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,15 +23,46 @@ public class DownloadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_download);
         Log.i(TAG, "activity created");
         mprogressBar = findViewById(R.id.progressBar);
+        mBookInput = findViewById(R.id.bookInput);
+        mTitleText = findViewById(R.id.titleText);
+        mAuthorText = findViewById(R.id.authorText);
     }
 
 
     public void downloadHandler(View view)
     {
         Log.i(TAG,"Button clicked");
+        Intent serviceIntent = new Intent(DownloadActivity.this,MusicService.class);
 
+        switch (view.getId()){
+            case R.id.buttonstart:
+                startService(serviceIntent);
+                break;
 
-        DownloadTask downloadTask = new DownloadTask(mprogressBar);
-        downloadTask.execute("http://lnt.com/imagetobedownloaded");
+            case R.id.buttonstop:
+                stopService(serviceIntent);
+                break;
+            case R.id.searchButton:
+                searchBooks();
+                break;
+        }
+
+/*        DownloadTask downloadTask = new DownloadTask(mprogressBar);
+        downloadTask.execute("http://lnt.com/imagetobedownloaded");*/
+        
+    }
+
+    private void searchBooks() {
+        String mQueryString = mBookInput.getText().toString();
+        new FetchBook(mTitleText, mAuthorText).execute(mQueryString);
+    }
+
+    private class FetchBook {
+        public FetchBook(TextView mTitleText, TextView mAuthorText) {
+        }
+
+        public void execute(String mQueryString) {
+
+        }
     }
 }
