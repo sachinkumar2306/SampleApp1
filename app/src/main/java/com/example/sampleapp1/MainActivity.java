@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText nameEditText;  //declaration
-    public  static String TAG = MainActivity.class.getSimpleName();
+    public  static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         {
             case R.id.button2:
                 Log.w(TAG, "Logging in");
-                addTwoNums(10,20);
+                addTwoNums(2,4);
                 Toast.makeText(this, "Welcome to android " + name, Toast.LENGTH_SHORT).show();
                 Intent homeIntent = new Intent(MainActivity.this, HomeActivity.class);
                 homeIntent.putExtra("mykey",  name);
@@ -86,9 +86,8 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param i
      * @param i1
-     * @return
      */
     private int addTwoNums(int i, int i1) {
-        return i + i1;
+        return i+i1;
     }
 }

@@ -32,4 +32,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTitle" />
 
+    <Button
+        android:id="@+id/buttonput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="36dp"
+        android:onClick="dbHandler"
+        android:text="put"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextsubtitle" />
+
+    <Button
+        android:id="@+id/buttonget"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:onClick="dbHandler"
+        android:text="get"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonput"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextsubtitle" />
+
+    <TextView
+        android:id="@+id/textViewdb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="21dp"
+        android:text="Data from db"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonput" />
+
+    <ListView
+        android:id="@+id/dblistview"
+        android:layout_width="382dp"
+        android:layout_height="652dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewdb"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

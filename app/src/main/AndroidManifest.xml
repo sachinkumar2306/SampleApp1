@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sampleapp1">
 
+    <uses-permission android:name="android.permission.READ_SMS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,23 +11,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SampleApp1">
-        <activity android:name=".DatastorageActivity">
+        <activity
+            android:name=".ObserverActivity"
+            android:label="@string/title_activity_observer"
+            android:theme="@style/Theme.SampleApp1.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".DatastorageActivity">
+           <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
         </activity>
 
         <service android:name=".MusicService" />
 
         <activity android:name=".DownloadActivity">
-            <!--<intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity android:name=".RecyclerActivity">
 

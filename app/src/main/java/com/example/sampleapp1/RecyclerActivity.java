@@ -84,10 +84,8 @@ public class RecyclerActivity extends AppCompatActivity {
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         super.onContextItemSelected(item);
-        switch (item.getItemId()){
-            case R.id.delete:
-                Toast.makeText(this, "deleting", Toast.LENGTH_SHORT).show();
-                break;
+        if (item.getItemId() == R.id.delete) {
+            Toast.makeText(this, "deleting", Toast.LENGTH_SHORT).show();
         }
         return true;
     }

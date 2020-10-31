@@ -3,7 +3,6 @@ package com.example.sampleapp1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,7 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class DownloadActivity extends AppCompatActivity {
-    public static String TAG = MainActivity.class.getSimpleName();
+    public static final String TAG = MainActivity.class.getSimpleName();
     ProgressBar mprogressBar;
     EditText mBookInput;
     TextView mTitleText,mAuthorText;
@@ -54,11 +53,11 @@ public class DownloadActivity extends AppCompatActivity {
 
     private void searchBooks() {
         String mQueryString = mBookInput.getText().toString();
-        new FetchBook(mTitleText, mAuthorText).execute(mQueryString);
+        new FetchBook().execute(mQueryString);
     }
 
     private class FetchBook {
-        public FetchBook(TextView mTitleText, TextView mAuthorText) {
+        public FetchBook() {
         }
 
         public void execute(String mQueryString) {

@@ -5,13 +5,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
+@SuppressWarnings("ALL")
 public class DownloadTask extends AsyncTask<String,Integer,Void> {
-    public static String TAG = DownloadTask.class.getSimpleName();
-ProgressBar progressBar;
+    public static final String TAG = DownloadTask.class.getSimpleName();
+final ProgressBar progressBar;
+    @SuppressWarnings("deprecation")
     public DownloadTask(ProgressBar mprogressBar) {
         progressBar = mprogressBar;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
@@ -19,6 +22,7 @@ ProgressBar progressBar;
     }
 
 
+    @SuppressWarnings("deprecation")
     @Override
     protected Void doInBackground(String... downloadUrl) {
         Log.i(TAG,"doInBackground --downloadUrl= "+downloadUrl[0]);
@@ -37,6 +41,7 @@ ProgressBar progressBar;
         return null;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     protected void onProgressUpdate(Integer... values) {
         super.onProgressUpdate(values);
@@ -45,6 +50,7 @@ ProgressBar progressBar;
         progressBar.setProgress(values[0]);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
